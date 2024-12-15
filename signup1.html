@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="lushcss.css">
+    <style>
+        body {
+            background-color: aqua;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: yellow;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .confirmation-message {
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>GCS<b>Group</b></h1>
+            <h3>Sign Up</h3>
+        </div>
+    </header>
+
+    <div class="container">
+        <form id="signUpForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Sign Up">
+        </form>
+
+        <div class="confirmation-message" id="confirmationMessage"></div>
+    </div>
+
+    <script>
+        document.getElementById('signUpForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Get form values
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            showConfirmationMessage(name);
+        });
+
+        function showConfirmationMessage(name) {
+            var confirmationMessage = document.getElementById('confirmationMessage');
+            confirmationMessage.textContent = 'Sign-up successful, ' + name + '! Welcome to GCS Group.';
+        }
+    </script>
+</body>
+</html>

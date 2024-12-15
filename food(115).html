@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="lushcss.css">
+    <style>
+       body {
+        background-color: aqua;
+       }
+    </style>
+</head>
+<body>
+    
+        <header>
+            <div class="logo"><h1>GCS<b>Group</b></h1>
+                <h3>Order Booking page</h3>
+        </header>
+  
+        <nav class="navbar">
+            <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#popular">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#review">Review</a></li>
+            </ul>
+  
+            <div>
+                <i class="fas fa-bars" id="bars"></i>
+                <i class="fas fa-search" id="search-icon"></i>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-shopping-cart"></a>
+  
+                <input class="signin" type="submit" value="Sign In" name="signin">
+            <input class="signup" type="submit" value="Sign up" name="signup">
+            </div>
+        </nav>
+    
+  
+    <div class="container">
+        <h1>Order your food</h1>
+        
+            <form id="orderForm" action="submit_order.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <label for="address">Delivery Address:</label>
+                <textarea id="address" name="address" rows="4" required></textarea><br><br>
+
+                <label for="quantity">Selected Food Item:</label><br>
+                <div class="container">
+                <div class="box">
+                    Tandoori Chicken(Full-450rs) 
+            </div>
+        </div>
+        
+
+            <label for="quantity">Quantity:</label><br>
+            <input type="number" id="quantity" name="quantity" min="1"><br>
+            <input type="submit" value="Submit Order" onclick="showOrderConfirmation()">
+        </form>
+    </div>
+</div>
+<script>
+    function showOrderConfirmation() {
+        alert("Your order has been placed! RF-id=8465652");
+    }
+</script>
+</body>
+</html>
